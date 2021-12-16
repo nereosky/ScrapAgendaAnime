@@ -3,6 +3,7 @@
 
 <head>
     <title>AnimeList</title>
+    <link rel="stylesheet" type= "text/css" href="{{ url_for('static',filename='animelist.css') }}">
 </head>
 
 <body>
@@ -12,6 +13,26 @@
            
         </li>
     </ul>
+    <table>
+        <tr>
+            {% for key, value in jour_dict.items() %}
+            <th scope="col"> {{ key }} </th>
+            {% endfor %}
+        </tr>
+        <tr>
+            {% for key, value in jour_dict.items() %}
+                <th>
+                    <table>
+                        <tr>
+                            {% for values in value %}
+                            <th>{{ values }}'</th>
+                            {% endfor %}
+                        </tr>
+                    </table>
+                </th> 
+            {% endfor %}
+        </tr>
+    </table>
 </body>
 
 </html>
